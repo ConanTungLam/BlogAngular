@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ManagerService, user } from 'src/app/service/manager.service';
 
 @Component({
   selector: 'app-manager-list',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manager-list.component.css']
 })
 export class ManagerListComponent implements OnInit {
-
-  constructor() { }
+  listUsers: user[];
+  constructor(
+    private managerService: ManagerService
+  ) { }
 
   ngOnInit() {
+    this.getUsersListCMP();
   }
-
+  getUsersListCMP(){
+    this.managerService.getUsersList().subscribe(data =>{
+      this.listUsers = data;
+    })
+  }
 }
