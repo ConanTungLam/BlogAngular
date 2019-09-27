@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Great+Vibes&display=swap" rel="stylesheet">
   <script>
     var full = false;
     function fill() {
@@ -20,7 +21,7 @@
 
 <body class="container-fluid">
 
-
+  <!-- Header -->
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div id="logocontainer" onclick=fill()>
       <div id="pelogo">TL</div>
@@ -38,36 +39,155 @@
     <div class="menu-list">
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link active" href="#"><button class="btn btn-outline-primary"><i class="fa fa-home"></i>Home</button></a>
+          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i
+                class="fa fa-home"></i>Home</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i class="fa fa-book"></i>Blog</button></a>
+          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i
+                class="fa fa-book"></i>Blog</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i class="fa fa-headphones"></i>Contact</button></a>
+          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i
+                class="fa fa-headphones"></i>Contact</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i class="fa fa-info-circle"></i>About</button></a>
+          <a class="nav-link" href="#"><button class="btn btn-outline-primary"><i
+                class="fa fa-info-circle"></i>About</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><button class="btn btn-outline-primary"><i
+                class="fa fa-user-times"></i>Manager</button></a>
         </li>
       </ul>
     </div>
     <form class="form-inline my-2 my-lg-0 search">
       <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
-      <button title="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+      <button title="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
+          class="fa fa-search"></i></button>
     </form>
     <div class="manager-login">
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href="#"><button title="Login" class="btn btn-outline-info"><i class="fa fa-user"></i></button></a>
+          <a class="nav-link" href="#"><button title="Login" class="btn btn-outline-info"><i
+                class="fa fa-user"></i></button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><button  title="Registered" class="btn btn-outline-info"><i class="fa fa-registered"></i></button></a>
+          <a class="nav-link" href="#"><button title="Registered" class="btn btn-outline-info"><i
+                class="fa fa-registered"></i></button></a>
         </li>
     </div>
   </nav>
+  <!-- Header -->
+  <!-- Container -->
+  <div class="content-container" style="height: 450px">
+    <app-root></app-root>
+  </div>
+
+  <!-- Container -->
+  <!-- Footer -->
+  <footer class="page-footer font-small stylish-color-dark pt-4">
+
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-2 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-2 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-2 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Follow me for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fa fa-facebook-square"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fa fa-google-plus-square"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fa fa-youtube-square"> </i>
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="#"> Conan Tung Lam</a>
+    </div>
+    <!-- Copyright -->
   Hello
 
-  <app-root></app-root>
+  </footer>
+  <!-- Footer -->
 </body>
 
 </html>

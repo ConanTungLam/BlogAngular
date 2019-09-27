@@ -1,79 +1,123 @@
 body{
-    margin:0;
+  margin:0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px
+}
+nav{
+  font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+}
+
+@keyframes gradientBG {
+  0% {
+      background-position: 0% 50%;
   }
-  a.active button.btn.btn-outline-primary{
-    background-color: #007bff;
-    color: white;
+  50% {
+      background-position: 100% 50%;
   }
-  a.active{
-      padding: 0px;
-      margin:  0.5rem 1rem
+  100% {
+      background-position: 0% 50%;
   }
-  #background{
-    display:block;
-    position:fixed;
-    width:100%;
-    height:100%;
-    background-color: #3c005b;
-    background: -webkit-radial-gradient(center, ellipse cover, #3c005b 1%,#0d0011 100%);
-    background: -moz-radial-gradient(center, ellipse cover, #3c005b 1%,#0d0011 100%);
-    background: -ie-radial-gradient(center, ellipse cover, #3c005b 1%,#0d0011 100%);
+}
+a.active button.btn.btn-outline-primary{
+  background-color: #007bff;
+  color: white;
+}
+a.active{
+    padding: 0px;
+    margin:  0.5rem 1rem
+}
+#background{
+  display:block;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-color: #3c005b;
+  background: -webkit-radial-gradient(center, ellipse cover, #3c005b 1%,#0d0011 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #3c005b 1%,#0d0011 100%);
+  background: -ie-radial-gradient(center, ellipse cover, #3c005b 1%,#0d0011 100%);
+}
+
+#logocontainer{
+  display:block;
+  position:relative;;
+  width:80px;
+  height:80px;
+  overflow:hidden;
+  transition:background-color 500ms;
+  cursor:pointer;
+}
+
+#pelogo{
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 70px;
+  height: 70px;
+  background: #34324b;
+  background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
+  background: -webkit-linear-gradient(-45deg, #34324b 0%,#161222 100%);
+  background: linear-gradient(135deg, #34324b 0%,#161222 100%);
+  background-size: contain;
+  font-family: Trebuchet MS, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #3ebffa;
+  text-align: center;
+  line-height: 70px;
+}
+
+.loader{
+  display:block;
+  position:absolute;
+  background-color:#3ebffa;
+}
+
+@keyframes slide1{
+  50%{width:75px; margin-left:0;}
+  100%{margin-left:75px;}
+}
+
+@keyframes slide2{
+  50%{height:75px; margin-top:0;}
+  100%{margin-top:75px;}
+}
+
+@keyframes slide3{
+  50%{width:75px; margin-right:0;}
+  100%{margin-right:75px;}
+}
+
+@keyframes slide4{
+  50%{height:75px; margin-bottom:0}
+  100%{margin-bottom:75px;}
+}
+
+.stylish-color-dark {
+  background-color: #e3f2fd!important;
   }
-  
-  #logocontainer{
-    display:block;
-    position:relative;;
-    width:80px;
-    height:80px;
-    overflow:hidden;
-    transition:background-color 500ms;
-    cursor:pointer;
+  footer.page-footer {
+      bottom: 0;
+      color: black;
   }
-  
-  #pelogo{
-    display: block;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 70px;
-    height: 70px;
-    background: #34324b;
-    background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
-    background: -webkit-linear-gradient(-45deg, #34324b 0%,#161222 100%);
-    background: linear-gradient(135deg, #34324b 0%,#161222 100%);
-    background-size: contain;
-    font-family: Trebuchet MS, sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: #3ebffa;
-    text-align: center;
-    line-height: 70px;
+
+  ul li i.fa{
+      font-size:  27px;
   }
-  
-  .loader{
-    display:block;
-    position:absolute;
-    background-color:#3ebffa;
+  ul li i.fa:hover{
+      cursor: pointer;
+      color: #007bff;
+      background-color: white
   }
-  
-  /*Pretty complex animation, so each side needs its own @keyframes.*/
-  
-  @keyframes slide1{
-    50%{width:75px; margin-left:0;}
-    100%{margin-left:75px;}
-  }
-  
-  @keyframes slide2{
-    50%{height:75px; margin-top:0;}
-    100%{margin-top:75px;}
-  }
-  
-  @keyframes slide3{
-    50%{width:75px; margin-right:0;}
-    100%{margin-right:75px;}
-  }
-  
-  @keyframes slide4{
-    50%{height:75px; margin-bottom:0}
-    100%{margin-bottom:75px;}
+  .content-container{
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: "Exo", sans-serif;
+      color: #fff;
+      background: linear-gradient(-45deg, lightblue , lightpink, lightskyblue, lightsteelblue);
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
+      padding: 50px 30px
   }
