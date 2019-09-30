@@ -1,2 +1,167 @@
+<!-- Header -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div id="logocontainer" (click)="fill()">
+        <div id="pelogo">TL</div>
+        <div class="loader" style="left:5px; top:0; height:5px; width:0; animation:slide1 2s linear forwards infinite">
+        </div>
+        <div class="loader"
+            style="right:0; top:5px; width:5px; height:0; animation:slide2 2s linear forwards infinite; animation-delay:1s">
+        </div>
+        <div class="loader"
+            style="right:5px; bottom:0; height:5px; width:0; animation:slide3 2s linear forwards infinite"></div>
+        <div class="loader"
+            style="left:0; bottom:5px; width:5px; height:0; animation:slide4 2s linear forwards infinite; animation-delay:1s">
+        </div>
+    </div>
+    <div class="menu-list">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['home']"><button class="btn btn-outline-primary"><i
+                            class="fa fa-home"></i>Home</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['product']"><button class="btn btn-outline-primary"><i
+                            class="fa fa-book"></i>Product</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['contact']"><button class="btn btn-outline-primary"><i
+                            class="fa fa-headphones"></i>Contact</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['about']"><button class="btn btn-outline-primary"><i
+                            class="fa fa-info-circle"></i>About</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['manager']"><button class="btn btn-outline-primary"><i
+                            class="fa fa-user-times"></i>Manager</button></a>
+            </li>
+        </ul>
+    </div>
+    <form class="form-inline my-2 my-lg-0 search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
+        <button title="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
+                class="fa fa-search"></i></button>
+    </form>
+    <div class="manager-login">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['login']"><button title="Login" class="btn btn-outline-info"><i
+                            class="fa fa-user"></i></button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['registered']"><button title="Registered"
+                        class="btn btn-outline-info"><i class="fa fa-registered"></i></button></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Header -->
+<!-- Container -->
+<div class="content-container">
+    <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+</div>
+
+<!-- Container -->
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4">
+
+    <div class="container text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+                <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                    consectetur
+                    adipisicing elit.</p>
+
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-2 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 4</a>
+                    </li>
+                </ul>
+
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-2 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 4</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-2 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 4</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+            <h5 class="mb-1">Follow me for free</h5>
+        </li>
+        <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+                <i class="fa fa-facebook-square"> </i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+                <i class="fa fa-google-plus-square"> </i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+                <i class="fa fa-youtube-square"> </i>
+            </a>
+        </li>
+    </ul>
+    <hr>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="#"> Conan Tung Lam</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

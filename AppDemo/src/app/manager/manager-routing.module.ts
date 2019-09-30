@@ -4,7 +4,8 @@ import { ManagerListComponent } from './manager-list/manager-list.component';
 
 
 const routes: Routes = [
-  { path: '', component: ManagerListComponent}
+  { path: '', redirectTo: 'account', pathMatch: 'full' },
+  { path: 'account', component: ManagerListComponent },
 ];
 
 @NgModule({

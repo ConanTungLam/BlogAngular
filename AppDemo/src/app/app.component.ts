@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AppDemo';
+  public full = false;
+  fill() {
+    this.full = !this.full;
+    document.getElementById("logocontainer").style.backgroundColor = this.full ? "#3ebffa" : "transparent";
+  }
 }
