@@ -16,41 +16,36 @@
     <div class="menu-list">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['home']"><button class="btn btn-outline-primary"><i
+                <a class="nav-link" [routerLink]="['home']" routerLinkActive="active"><button class="btn btn-outline-primary"><i
                             class="fa fa-home"></i>Home</button></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['product']"><button class="btn btn-outline-primary"><i
+                <a class="nav-link" [routerLink]="['product']" routerLinkActive="active"><button class="btn btn-outline-primary"><i
                             class="fa fa-book"></i>Product</button></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['contact']"><button class="btn btn-outline-primary"><i
+                <a class="nav-link" [routerLink]="['contact']" routerLinkActive="active"><button class="btn btn-outline-primary"><i
                             class="fa fa-headphones"></i>Contact</button></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['about']"><button class="btn btn-outline-primary"><i
+                <a class="nav-link" [routerLink]="['about']" routerLinkActive="active"><button class="btn btn-outline-primary"><i
                             class="fa fa-info-circle"></i>About</button></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" [routerLink]="['manager']"><button class="btn btn-outline-primary"><i
+                <a class="nav-link" [routerLink]="['manager']" routerLinkActive="active"><button class="btn btn-outline-primary"><i
                             class="fa fa-user-times"></i>Manager</button></a>
             </li>
         </ul>
     </div>
-    <form class="form-inline my-2 my-lg-0 search">
-        <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
-        <button title="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
-                class="fa fa-search"></i></button>
-    </form>
     <div class="manager-login">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['login']"><button title="Login" class="btn btn-outline-info"><i
-                            class="fa fa-user"></i></button></a>
+                <a class="nav-link" [routerLink]="['login']" routerLinkActive="active"><button class="btn btn-outline-dark"><i
+                            class="fa fa-user"></i>Login</button></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['registered']"><button title="Registered"
-                        class="btn btn-outline-info"><i class="fa fa-registered"></i></button></a>
+                <a class="nav-link" [routerLink]="['registered']" routerLinkActive="active"><button class="btn btn-outline-dark"><i
+                            class="fa fa-pencil-square-o"></i>Registered</button></a>
             </li>
         </ul>
     </div>

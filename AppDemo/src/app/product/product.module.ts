@@ -9,7 +9,12 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
 
 
 @NgModule({
-  declarations: [ProductListComponent, ProductAddComponent, ProductEditComponent, ProductDeleteComponent],
+  declarations: [
+    ProductListComponent, 
+    ProductAddComponent, 
+    ProductEditComponent, 
+    ProductDeleteComponent
+  ],
   imports: [
     CommonModule,
     ProductRoutingModule
