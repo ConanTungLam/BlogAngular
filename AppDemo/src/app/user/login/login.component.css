@@ -1,9 +1,12 @@
 
+.login-container{
+    padding: 50px 30px
+}
+
 h1 {
     margin: 0;
     color: #ffffff;
     text-align: center;
-    font-size: 50px;
     font-weight: 500;
     letter-spacing: 2px;
     padding: 50px 0;
@@ -12,7 +15,6 @@ h1 {
 h2 {
     margin: 0;
     color: #fc3955;
-    font-size: 25px;
     font-weight: 400;
     text-align: center;
     letter-spacing: 1px;
@@ -21,7 +23,6 @@ h2 {
 
 p.w3l-register-p {
     color: #eee;
-    font-size: 13px;
     text-align: center;
     margin-top: 2em;
 }
@@ -31,20 +32,24 @@ p.w3l-register-p {
     max-width: 500px;
     margin: 0 auto;
     padding: 3em;
-    border-radius: 10px;
     box-sizing: border-box;
 }
-
+button[type="submit"]{
+    font-size: 20px;
+    border-radius: 20px;
+}
 .group {
     display: flex;
-    padding: 15px 5px;
+    padding: 5px 5px;
     background-color: #ffffff;
+    border-radius: 20px;
 }
 
 .group i {
     color: #fc3955;
-    font-size: 20px;
     padding: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
 .w3l-form-group {
@@ -54,7 +59,6 @@ p.w3l-register-p {
 .w3l-form-group label {
     display: block;
     text-transform: uppercase;
-    font-size: 15px;
     color: #d2d2d2;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -68,21 +72,24 @@ input[type="password"] {
     box-sizing: border-box;
     background: transparent;
     color: #000;
+    font-size: 20px
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
 }
-
+.forgot a, .forgot p{
+    font-size: 18px;
+    color: #ffffff
+}
 button {
     color: #ffffff;
-    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
     border: none;
-    padding: 12px 60px;
+    padding: 20px 60px;
     cursor: pointer;
     width: 100%;
     border-radius: 6px;
@@ -101,7 +108,6 @@ button:hover {
 
 a {
     color: #eee;
-    font-size: 14px;
     text-decoration: none;
 }
 
@@ -109,82 +115,9 @@ a {
     color: #ffffff;
     text-align: center;
     margin: 0px;
-	font-size: 13px;
 }
 
 .register {
     color: #00BCD4;
     text-decoration: none;
 }
-
-
-
-/*-- /responsive design --*/
-
-@media(max-width:768px) {
-    h1 {
-        font-size: 47px;
-    }
-}
-
-@media(max-width:667px) {
-    h1 {
-        font-size: 45px;
-    }
-}
-
-@media(max-width:640px) {
-    p.copyright-agileinfo {
-        letter-spacing: 1px;
-    }
-    h1 {
-        font-size: 43px;
-    }
-}
-
-@media(max-width:568px) {
-    h1 {
-        font-size: 40px;
-    }
-    p.copyright-agileinfo {
-        font-size: 14px;
-    }
-}
-
-@media(max-width:480px) {
-    .w3l-login-form {
-    margin: 0 3vw;
-}
-    h1 {
-        font-size: 38px;
-    }
-    p.copyright-agileinfo {
-        line-height: 1.8em;
-    }
-}
-
-@media(max-width:414px) {
-    h1 {
-        font-size: 34px;
-    }
-}
-
-@media(max-width:384px) {
-    h1 {
-        font-size: 30px;
-    }
-}
-
-@media(max-width:320px) {
-    h1 {
-        font-size: 25px;
-    }
-    .forgot p {
-        text-align: left;
-    }
-    .forgot {
-        display: block;
-    }
-}
-
-/*-- /responsive design --*/

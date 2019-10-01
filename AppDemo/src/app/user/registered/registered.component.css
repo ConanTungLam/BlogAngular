@@ -1,144 +1,14 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-
-
-/* reset */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-dl,
-dt,
-dd,
-ol,
-nav ul,
-nav li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
-}
-
-ol,
-ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-
-blockquote,
-q {
-	quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 
 /* start editing from here */
+.registered-container{
+    padding: 50px 30px
+}
 
 a {
 	text-decoration: none;
+}
+button[type="submit"]{
+    font-size: 20px
 }
 
 .txt-rt {
@@ -259,6 +129,9 @@ body a:focus,
 a:hover {
 	text-decoration: none;
 }
+button.btn.btn-danger{
+    border-radius: 35px;
+}
 
 select,
 input[type="email"],
@@ -343,15 +216,15 @@ h1.error {
 
 .img-right-side h3, .txt-left-side h2 {
 	text-transform:uppercase;
-    color: #000;
+    color: lime;
     letter-spacing: 0px;
 }
-.img-right-side p {
-    font-size: 22px;
-    color: #908c8c;
+.img-right-side ol li {
+    font-size: 20px;
+    color: aliceblue;
     letter-spacing: 0px;
-    line-height: 24px;
-    margin-bottom: 48px;
+    line-height: 20px;
+    margin-bottom: 30px;
 }
 .form-left-to-w3l {
     display: flex;
@@ -458,7 +331,6 @@ input.checked {
     font-weight: 800;
 }
 .w3layouts_more-buttn a {
-    font-size: 13px;
     color: #e80000;
     font-weight: bold;
     text-decoration: none;
@@ -476,72 +348,41 @@ input.checked {
 }
 .copyrigh-wthree p a {
     color:#60baaf;
-    font-size: 14px;
     font-weight: 800;
 }
 
 /*--responsive--*/
 @media(max-width:1920px){
-	h1.error {
-    margin-bottom: 50px;
-    font-size: 55px;
-}
 .img-right-side h3, .txt-left-side h2 {
-    font-size: 30px;
     margin-bottom: 37px;
 }
-.remenber-me, a.for {
-    font-size: 13px;
-	}
 .img-right-side, .txt-left-side {
     padding: 5.5em 5em 3.5em;
 }
 .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
-    font-size: 16px;
     padding-left: 25px;
 }
 .form-left-to-w3l {
     margin: 0px 0px 36px;
     padding-bottom: 17px;
 }
-.form-left-to-w3l span {
-    font-size: 25px;
-}
-.w3layouts_more-buttn h3 {
-    font-size: 15px;
-}
-.copyrigh-wthree {
-    padding: 4em 0em 4.5em;
-}
 }
 @media(max-width:1680px){
 	h1.error {
     margin-bottom: 47px;
-    font-size: 52px;
 }
 .img-right-side h3, .txt-left-side h2 {
-    font-size: 23px;
     margin-bottom: 35px;
 }
-.remenber-me, a.for {
-    font-size: 12px;
-	}
 .img-right-side, .txt-left-side {
     padding: 4.5em 4.5em 3em;
 }
 .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
-    font-size: 15px;
     padding-left: 23px;
 }
 .form-left-to-w3l {
     margin: 0px 0px 35px;
     padding-bottom: 15px;
-}
-.form-left-to-w3l span {
-    font-size: 23px;
-}
-.w3layouts_more-buttn h3 {
-    font-size: 14px;
 }
 .copyrigh-wthree {
     padding: 3.5em 0em 4.5em;
@@ -551,41 +392,21 @@ input.checked {
 h1.error {
     margin-bottom: 43px;
     letter-spacing: 3px;
-    font-size: 49px;
 }	
 .img-right-side h3, .txt-left-side h2 {
-    font-size: 22px;
     margin-bottom: 34px;
 }
-.remenber-me, a.for {
-    font-size: 11px;
-	}
 .img-right-side, .txt-left-side {
     padding: 3.5em 4em 2.5em;
 }
 .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
-    font-size: 20px;
     padding-left: 20px;
 }
 .form-left-to-w3l {
     margin: 0px 0px 33px;
     padding-bottom: 14px;
 }
-.form-left-to-w3l span {
-    font-size: 21px;
-}
-.w3layouts_more-buttn h3 {
-    font-size: 13px;
-}
-.copyrigh-wthree p {
-    font-size: 14px;
-    letter-spacing: 3px;
-}
-.copyrigh-wthree {
-    padding: 3em 0em 4.5em;
-}
 button[type=submit] {
-    font-size: 15px;
     padding: 19px 20px;
 }
 .right-side-forget {
@@ -595,11 +416,7 @@ button[type=submit] {
 @media(max-width:1440px){
 h1.error {
     margin-bottom: 41px;
-    font-size: 47px;
 }
-.img-right-side h3, .txt-left-side h2 {
-    font-size: 21px;
-	}
 .img-right-side, .txt-left-side {
     padding: 3em 3.5em 2.3em;
 }
@@ -620,18 +437,11 @@ button[type=submit] {
 }
 }
 @media(max-width:1280px){
-h1.error {
-    margin-bottom: 38px;
-    font-size: 43px;
-}
 .img-right-side, .txt-left-side {
     padding: 2.5em 3em 2.3em;
 }
 .w3layouts-two-grids {
-    width: 88%;
-}
-.form-left-to-w3l span {
-    font-size: 18px;
+    width: 100%;
 }
 .form-left-to-w3l input[type="text"],
 .form-left-to-w3l input[type="email"], 
@@ -654,34 +464,20 @@ h1.error {
     margin: 0px 0px 26px;
 	}
 	.w3layouts-two-grids {
-    width: 92%;
+    width: 100%;
 }
 .copyrigh-wthree {
     padding: 2.5em 0em 4em;
 }
-h1.error {
-    font-size: 41px;
-}
+
 .img-right-side h3, .txt-left-side h2 {
     margin-bottom: 27px;
 }
 }
 @media(max-width:1050px){
-	.img-right-side h3, .txt-left-side h2 {
-    font-size: 20px;
-}
 .img-right-side p {
     margin-bottom: 33px;
 }
-.remenber-me, a.for {
-    font-size: 11px;
-}
-.w3layouts_more-buttn h3 {
-    font-size: 12px;
-}
-.w3layouts_more-buttn a {
-    font-size: 12px;
-	}
 }
 @media(max-width:1024px){
 .mid-class {
@@ -690,18 +486,12 @@ h1.error {
 .w3layouts-two-grids {
     width: 51%;
 }
-h1.error {
-    margin-bottom: 9px;
-	}
 .form-left-to-w3l {
     margin: 0px 0px 24px;
     padding-bottom: 11px;
 }
 }
 @media(max-width:991px){
-h1.error {
-    font-size: 38px;
-}
 .img-right-side, .txt-left-side {
     padding: 2.3em 2.2em 1.8em;
 }
@@ -710,9 +500,6 @@ button[type=submit] {
 }	
 }
 @media(max-width:900px){
-.form-left-to-w3l span {
-    font-size: 16px;
-}
 .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
     padding-left: 14px;
 }	
@@ -730,18 +517,11 @@ button[type=submit] {
 .w3layouts-two-grids {
     width: 61%;
 }
-button[type=submit] {
-    font-size: 14px;
-}
 .copyrigh-wthree p {
     letter-spacing: 1px;
 }	
 }
 @media(max-width:767px){
-h1.error {
-    font-size: 36px;
-    letter-spacing: 2px;
-}
 .img-right-side h3, .txt-left-side h2 {
     margin-bottom: 23px;
 }	
@@ -766,9 +546,6 @@ h1.error {
 .w3layouts-two-grids {
     width: 72%;
 }
-h1.error {
-    font-size: 34px;
-	}
 button[type=submit] {
     margin: 36px 0px;
 }
@@ -777,10 +554,6 @@ button[type=submit] {
 .w3layouts-two-grids {
     width: 78%;
 }	
-button[type=submit] {
-    padding: 12px 20px;
-    font-size: 22px;
-}
 }
 @media(max-width:568px){
 .w3layouts-two-grids {
@@ -794,21 +567,11 @@ button[type=submit] {
 }
 }
 @media(max-width:480px){
-h1.error {
-font-size: 30px;
-}	
 .w3layouts-two-grids {
     width: 94%;
 }
-.img-right-side h3, .txt-left-side h2 {
-    font-size: 19px;
-}
 }
 @media(max-width:440px){
-h1.error {
-font-size: 27px;
-letter-spacing: 1px;
-}
 .copyrigh-wthree p a {
     line-height: 35px;
 }
@@ -819,9 +582,6 @@ letter-spacing: 1px;
 }
 }
 @media(max-width:384px){
-h1.error {
-    font-size: 24px;
-}
 .img-right-side, .txt-left-side {
     padding: 1.5em 1.5em 1.4em;
 }	
@@ -831,24 +591,12 @@ h1.error {
     margin: 0px 0px 19px;
     padding-bottom: 7px;
 }
-h1.error {
-    font-size: 22px;
-}	
-}
-@media(max-width:320px){
-	.img-right-side h3, .txt-left-side h2 {
-    font-size: 17px;
-}
-h1.error {
-    letter-spacing: 0px;
-    font-size: 21px;
-}
 }
 .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
     font-size: 20px;
 
 }
 .form-left-to-w3l span.fa{
-    padding: 8px;
+    padding-top: 8px;
 }
 /*--//responsive--*/
