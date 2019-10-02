@@ -1,7 +1,102 @@
-
 <div class="list-product-container">
-    <form class="form-inline my-2 my-lg-0 search">
-        <input class="form-control mr-sm-2" type="search" placeholder="Looking for ..." aria-label="Search">
-        <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="form-cover">
+        <form class="form-inline my-2 my-lg-0 search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sản phẩm bạn muốn tìm..." aria-label="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
+        </form>
+    </div>
+    <!-- content -->
+    <ng-container *ngIf="products">
+        <div class="lm-item lm-item-1" *ngFor="let product of products">
+            <div class="lm-item-top">
+                <span class="lm-item-title lm-underline">{{product.name}}</span>
+                <div class="lm-item-price item-price2-w3ls">Giá: {{product.price}} VND
+                </div>
+            </div>
+            <div class="lm-item-body">
+                <div class="lm-item-desc">
+                    <div class="cover-img">
+                        <div class="product-img">
+                            <img src="/assets/products/logo.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lm-item-bottom">
+                <button class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"
+                    (click)="viewProduct(product)"><i class="fa fa-eye"></i></button>
+                <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-warning"  (click)="deleteProduct(product.id)"><i class="fa fa-remove"></i></button>
+                <button class="btn btn-success"><i class="fa fa-cart-plus"></i></button>
+            </div>
+
+        </div>
+        <!-- Modal -->
+        <div *ngIf="currentProduct" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <table>
+                        <tr>
+                            <td rowspan="100%" style="vertical-align: middle; text-align: center"><img
+                                    class="view-product-img" src="/assets/products/logo.png" width="100px"
+                                    height="100px"></td>
+                            <td>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"><span class="label-item">Sản
+                                            Phẩm: </span> <span class="info-item">{{currentProduct.name}}</span></h5>
+                                    <button type="button" class="close"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <div class="modal-body">
+                                    <span class="label-item">Giới Thiệu: </span> <span
+                                        class="info-item">{{currentProduct.description}}</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="modal-sub-footer">
+                                    <span class="label-item">Đơn Giá: </span> <span
+                                        class="info-item">{{currentProduct.price}}/SP</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <div class="modal-sub-footer">
+                                    <span class="label-item">Số Lượng Kho: </span> <span
+                                        class="info-item">{{currentProduct.amount}} SP</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info" data-dismiss="modal"
+                                        (click)="addIssue()">Vấn Đáp</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                        (click)="viewProduct(null)">Đóng</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    </ng-container>
+    <br>
+
+
+    <div style="text-align: right">
+        <button class="btn btn-success" style="margin-top: 5px" >Add Item</button>
+    </div>
+
+    <!-- //content -->
 </div>
