@@ -97,8 +97,25 @@ export class ProductService {
 
   deleteProduct(id:number){
     const index = products.findIndex(data => data.id === id);
-    console.log(index);
     products.splice(index, 1);
+  }
+
+  addNewProduct(value: any){
+    products.push(value);
+  }
+
+  getSingleProduct(id: number){
+    const index = products.findIndex(data => data.id === id);
+    return of(products[index]);
+  }
+
+  updateProduct(productData){
+    const index = products.findIndex(data => data.id === productData.id);
+    products[index] = productData;
+
+    return of({
+      success: 'true'
+    })
   }
 
 }

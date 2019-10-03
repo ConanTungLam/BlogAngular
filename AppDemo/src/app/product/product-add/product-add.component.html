@@ -1,1 +1,31 @@
-<p>product-add works!</p>
+<div class="product-add-container">
+        <h1 class="badge badge-info" style="padding: 15px; border-radius: 20px;">THÊM SẢN PHẨM</h1>
+        <div class="w3ls-contact">
+            <form [formGroup]="addProductForm" (ngSubmit)="addNewProduct(addProductForm)">
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-user" aria-hidden="true"></i> Tên:</label>
+                    <input type="text" placeholder="" formControlName="name"  />
+                </div>
+                <div class="agile-field-txt">
+                        <label>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>Giới thiệu:</label>
+                        <textarea placeholder="" formControlName="description"></textarea>
+                    </div>
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-laptop" aria-hidden="true"></i>Đơn giá:</label>
+                    <input type="text" placeholder="" formControlName="price" />
+                </div>
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>Số lượng:</label>
+                    <input type="text" placeholder="" formControlName="amount" />
+                </div>
+
+                <div class="w3ls-contact  w3l-sub">
+                        <button type="submit" class="btn btn-danger" [disabled]="!addProductForm.valid">LƯU</button>
+                </div>
+            </form>
+        </div>
+</div>

@@ -9,7 +9,7 @@ import { AboutListComponent } from './about/about-list/about-list.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisteredComponent } from './user/registered/registered.component';
 import { HomeComponent } from './home/home/home.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,9 @@ import { HomeComponent } from './home/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

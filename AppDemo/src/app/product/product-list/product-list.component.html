@@ -1,9 +1,15 @@
 <div class="list-product-container">
     <div class="form-cover">
         <form class="form-inline my-2 my-lg-0 search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sản phẩm bạn muốn tìm..." aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sản phẩm bạn muốn tìm..."
+                aria-label="Search">
             <button class="btn btn-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
         </form>
+    </div>
+    <div style="text-align: right; margin-bottom: 5px">
+        <a [routerLink]="['../add']">
+            <button class="btn btn-success" style="margin-top: 5px"><i class="fa fa-plus-circle"></i> Add Item</button>
+        </a>
     </div>
     <!-- content -->
     <ng-container *ngIf="products">
@@ -24,8 +30,11 @@
             <div class="lm-item-bottom">
                 <button class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"
                     (click)="viewProduct(product)"><i class="fa fa-eye"></i></button>
-                <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
-                <button class="btn btn-warning"  (click)="deleteProduct(product.id)"><i class="fa fa-remove"></i></button>
+                <a [routerLink]="['../edit', product.id]">
+                    <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                </a>
+                <button class="btn btn-warning" (click)="deleteProduct(product.id)"><i
+                        class="fa fa-remove"></i></button>
                 <button class="btn btn-success"><i class="fa fa-cart-plus"></i></button>
             </div>
 
@@ -90,12 +99,7 @@
         </div>
         <!-- Modal -->
     </ng-container>
-    <br>
 
-
-    <div style="text-align: right">
-        <button class="btn btn-success" style="margin-top: 5px" ><i class="fa fa-plus-circle"></i> Add Item</button>
-    </div>
 
     <!-- //content -->
 </div>

@@ -1,1 +1,36 @@
-<p>product-edit works!</p>
+<div *ngIf="editProductForm" class="product-edit-container">
+        <h1 class="badge badge-info" style="padding: 15px; border-radius: 20px;">CHỈNH SỬA SẢN PHẨM</h1>
+        <div class="w3ls-contact">
+            <form [formGroup]="editProductForm" (ngSubmit)="saveProduct()">
+                    <div class="agile-field-txt" style="text-align: left">
+                            <label>
+                                <i class="fa fa-user" aria-hidden="true" disabled></i> No:</label>
+                            <input class="id-disable" type="text" placeholder="" disabled />
+                        </div>
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-user" aria-hidden="true"></i> Tên:</label>
+                    <input type="text" placeholder="" formControlName="name"  />
+                </div>
+                <div class="agile-field-txt">
+                        <label>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>Giới thiệu:</label>
+                        <textarea placeholder="" formControlName="description"></textarea>
+                    </div>
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-laptop" aria-hidden="true"></i>Đơn giá:</label>
+                    <input type="text" placeholder="" formControlName="price" />
+                </div>
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>Số lượng:</label>
+                    <input type="text" placeholder="" formControlName="amount" />
+                </div>
+
+                <div class="w3ls-contact  w3l-sub">
+                        <button type="submit" class="btn btn-danger">LƯU</button>
+                </div>
+            </form>
+        </div>
+</div>
