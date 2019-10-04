@@ -5,8 +5,13 @@ button.btn.btn-success.my-2.my-sm-0, input{
     font-size: 20px
 }
 
-button.btn.btn-success{
-    font-size: 20px
+.mat-raised-button{
+    min-width: auto
+}
+
+button.btn.btn-success.add{
+    font-size: 20px;
+    margin: 5px
 }
 
 span.label-item{
@@ -110,7 +115,10 @@ h1 {
 
 }
 .lm-item-1 .lm-item-bottom{
-    background-color: lightsteelblue
+    background-color: lightsteelblue;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .lm-item-1 .lm-item-top {

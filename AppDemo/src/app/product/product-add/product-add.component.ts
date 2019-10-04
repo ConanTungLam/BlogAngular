@@ -27,10 +27,12 @@ export class ProductAddComponent implements OnInit {
   })
 
   addNewProduct() {
-    this.productService.addNewProduct(this.addProductForm.value);
-    this.productService.getProducts();
-    this.addProductForm.reset();
-    this.location.back();
+ 
+      this.productService.addNewProduct(this.addProductForm.value);
+      this.productService.getProducts();
+      this.addProductForm.reset();
+      this.location.back();
+    
   }
 
 }

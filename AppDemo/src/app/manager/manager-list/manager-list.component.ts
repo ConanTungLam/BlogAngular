@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ManagerService, user } from 'src/app/service/manager.service';
 
+
 @Component({
   selector: 'app-manager-list',
   templateUrl: './manager-list.component.html',

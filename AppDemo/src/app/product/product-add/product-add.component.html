@@ -1,4 +1,6 @@
 <div class="product-add-container">
+
+        
         <h1 class="badge badge-info" style="padding: 15px; border-radius: 20px;">THÊM SẢN PHẨM</h1>
         <div class="w3ls-contact">
             <form [formGroup]="addProductForm" (ngSubmit)="addNewProduct(addProductForm)">
@@ -6,6 +8,7 @@
                     <label>
                         <i class="fa fa-user" aria-hidden="true"></i> Tên:</label>
                     <input type="text" placeholder="" formControlName="name"  />
+                    <div *ngIf="addProductForm.controls['name'].hasError('required') && addProductForm.controls['name'].touched" class="alert alert-danger">You must include a last name.</div>
                 </div>
                 <div class="agile-field-txt">
                         <label>
@@ -24,7 +27,7 @@
                 </div>
 
                 <div class="w3ls-contact  w3l-sub">
-                        <button type="submit" class="btn btn-danger" [disabled]="!addProductForm.valid">LƯU</button>
+                        <button  class="btn btn-danger">LƯU</button>
                 </div>
             </form>
         </div>

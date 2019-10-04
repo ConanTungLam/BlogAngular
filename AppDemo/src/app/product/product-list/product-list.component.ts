@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService, product } from 'src/app/service/product.service';
+import { SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
 
 @Component({
   selector: 'app-product-list',
@@ -12,6 +13,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    public readonly swalTargets: SwalPortalTargets
   ) { }
 
   ngOnInit() {
@@ -33,9 +35,10 @@ export class ProductListComponent implements OnInit {
   }
 
   deleteProduct(id:number){
-    console.log(id);
+
     this.productService.deleteProduct(id);
     this.getListProducts();
   }
+
   
 }

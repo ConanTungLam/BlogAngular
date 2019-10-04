@@ -6,9 +6,9 @@
             <button class="btn btn-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
         </form>
     </div>
-    <div style="text-align: right; margin-bottom: 5px">
+    <div style="text-align: center; margin-bottom: 5px">
         <a [routerLink]="['../add']">
-            <button class="btn btn-success" style="margin-top: 5px"><i class="fa fa-plus-circle"></i> Add Item</button>
+            <button class="btn btn-success add"><i class="fa fa-plus-circle"></i>Thêm sản phẩm</button>
         </a>
     </div>
     <!-- content -->
@@ -28,14 +28,32 @@
                 </div>
             </div>
             <div class="lm-item-bottom">
-                <button class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"
-                    (click)="viewProduct(product)"><i class="fa fa-eye"></i></button>
+                    <button mat-raised-button data-toggle="modal" class="btn btn-info" data-target="#exampleModalCenter"
+                    (click)="viewProduct(product)"
+                    matTooltip="Xem chi tiết"
+                    aria-label="Button that displays a tooltip when focused or hovered over">
+                    <i class="fa fa-eye"></i></button>
+            
+                
                 <a [routerLink]="['../edit', product.id]">
-                    <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                    <button mat-raised-button class="btn btn-success"
+        matTooltip="Chỉnh sửa"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        <i class="fa fa-edit"></i>
+</button>
                 </a>
-                <button class="btn btn-warning" (click)="deleteProduct(product.id)"><i
-                        class="fa fa-remove"></i></button>
-                <button class="btn btn-success"><i class="fa fa-cart-plus"></i></button>
+                <button mat-raised-button class="btn btn-warning" (click)="deleteProduct(product.id)"
+        matTooltip="Xóa sản phẩm"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        <i
+        class="fa fa-remove"></i>
+</button>
+                        <button mat-raised-button class="btn btn-primary"
+        matTooltip="Thêm vào giỏ hàng"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        <i class="fa fa-cart-plus"></i>
+</button>
+                
             </div>
 
         </div>
@@ -103,3 +121,4 @@
 
     <!-- //content -->
 </div>
+
