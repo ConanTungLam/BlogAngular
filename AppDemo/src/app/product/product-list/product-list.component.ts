@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService, product } from 'src/app/service/product.service';
-import { SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
+import { SwalPortalTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-list',
@@ -35,9 +36,33 @@ export class ProductListComponent implements OnInit {
   }
 
   deleteProduct(id:number){
-
     this.productService.deleteProduct(id);
     this.getListProducts();
+    Swal.fire({
+      title: 'Thành Công!',
+      text: 'Sản phẩm đã được lưu!',
+      type: 'success',
+      timer: 2000
+    })
+  }
+
+  cancelProduct(){
+    Swal.fire({
+      title: 'Thất Bại!',
+      text: 'Bạn đã hủy tác vụ xóa!',
+      type: 'error',
+      timer: 2000
+    })
+  }
+
+  addProductToCart(id:number){
+    
+    Swal.fire({
+      title: 'Hoàn Tất!',
+      text: 'Sản phẩm đã được thêm vào giỏ hàng!',
+      type: 'success',
+      timer: 2000
+    })
   }
 
   
