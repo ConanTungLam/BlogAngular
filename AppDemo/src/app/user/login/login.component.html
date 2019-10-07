@@ -1,25 +1,34 @@
 <div class="login-container">
     <div class=" w3l-login-form">
         <h2><span class="badge badge-info" style="padding: 15px; border-radius: 20px;">ĐĂNG NHẬP TÀI KHOẢN</span></h2>
-        <form [formGroup]="loginForm">
+        <form [formGroup]="loginForm" (ngSubmit)="saveLogin(loginForm)">
             <div class="w3l-form-group">
                 <div class="group">
                     <i class="fa fa-user"></i>
-                    <input type="text" class="form-control" placeholder="Tài Khoản" required="required" />
+                    <input type="text" class="form-control" formControlName="username" placeholder="Tài Khoản" />
+                </div>
+                <div *ngIf="loginForm.controls['username'].hasError('required') 
+                && loginForm.controls['username'].touched" class="alert alert-danger slider-error">
+                    Vui lòng nhập tài khoản!
                 </div>
             </div>
             <div class="w3l-form-group">
                 <div class="group">
                     <i class="fa fa-lock"></i>
-                    <input type="password" class="form-control" placeholder="Mật Khẩu" required="required" />
+                    <input type="password" class="form-control" minlength="6" formControlName="password"
+                        placeholder="Mật Khẩu" />
+                </div>
+                <div *ngIf="loginForm.controls['password'].hasError('required') 
+                && loginForm.controls['password'].touched" class="alert alert-danger slider-error">
+                    Vui lòng nhập mật khẩu!
                 </div>
             </div>
             <div class="forgot">
                 <a>Quên Mật Khẩu?</a>
-                <p><input type="checkbox" style="position: relative; top: 2px">&nbsp;Ghi Nhớ</p>
+                <p><mat-checkbox style="position: relative; top: 2px; left: -5px"></mat-checkbox>Ghi Nhớ</p>
             </div>
             <div class="w3l-form-group submit-login">
-                <button type="submit" class="btn btn-danger">Đăng Nhập</button>
+                <button type="submit" class="btn btn-danger" [disabled]="!loginForm.valid">Đăng Nhập</button>
             </div>
         </form>
     </div>

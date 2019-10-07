@@ -11,6 +11,8 @@ import { RegisteredComponent } from './user/registered/registered.component';
 import { HomeComponent } from './home/home/home.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialCommonModule } from './material-common/material-common.module';
+import { CartListComponent } from './shopping-cart/cart-list/cart-list.component';
 
 
 @NgModule({
@@ -21,14 +23,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AboutListComponent,
     LoginComponent,
     RegisteredComponent,
-    HomeComponent
+    HomeComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialCommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

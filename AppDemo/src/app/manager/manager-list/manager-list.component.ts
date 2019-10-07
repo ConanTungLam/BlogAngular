@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ManagerService, user } from 'src/app/service/manager.service';
+import { ManagerUserService, user } from 'src/app/service/manager-user.service';
 
 
 @Component({
@@ -10,14 +10,14 @@ import { ManagerService, user } from 'src/app/service/manager.service';
 export class ManagerListComponent implements OnInit {
   listUsers: user[];
   constructor(
-    private managerService: ManagerService
+    private managerUserService: ManagerUserService
   ) { }
 
   ngOnInit() {
     this.getUsersListCMP();
   }
   getUsersListCMP(){
-    this.managerService.getUsersList().subscribe(data =>{
+    this.managerUserService.getUsersList().subscribe(data =>{
       this.listUsers = data;
     })
   }

@@ -1,36 +1,68 @@
 <div *ngIf="editProductForm" class="product-edit-container">
-        <h1 class="badge badge-info" style="padding: 15px; border-radius: 20px;">CHỈNH SỬA SẢN PHẨM</h1>
-        <div class="w3ls-contact">
-            <form [formGroup]="editProductForm" (ngSubmit)="saveProduct()">
-                    <div class="agile-field-txt" style="text-align: left">
-                            <label>
-                                <i class="fa fa-user" aria-hidden="true" disabled></i> No:</label>
-                            <input class="id-disable" type="text" placeholder="" disabled />
-                        </div>
-                <div class="agile-field-txt">
-                    <label>
-                        <i class="fa fa-user" aria-hidden="true"></i> Tên:</label>
-                    <input type="text" placeholder="" formControlName="name"  />
+        <swal
+        #saveSwal
+        title="Thành Công!"
+        text="Sản phẩm đã được lưu!"
+        type="success"
+        [showCancelButton]="false"
+        [focusCancel]="false"
+        (confirm)="saveProduct()">
+      </swal>
+    <h1 class="badge badge-info" style="padding: 15px; border-radius: 20px;">CHỈNH SỬA SẢN PHẨM</h1>
+    <div class="w3ls-contact">
+        <form [formGroup]="editProductForm" (ngSubmit)="saveProduct()">
+            <div class="agile-field-txt">
+                <label>
+                    <i class="fa fa-user" aria-hidden="true"></i> Tên:</label>
+                <input type="text" placeholder="" formControlName="name" />
+                <div *ngIf="editProductForm.controls['name'].hasError('required')" class="alert alert-danger slider-error">
+                    Lỗi: Tên sản phẩm không được để trống!
                 </div>
-                <div class="agile-field-txt">
-                        <label>
-                            <i class="fa fa-pencil" aria-hidden="true"></i>Giới thiệu:</label>
-                        <textarea placeholder="" formControlName="description"></textarea>
-                    </div>
-                <div class="agile-field-txt">
-                    <label>
-                        <i class="fa fa-laptop" aria-hidden="true"></i>Đơn giá:</label>
-                    <input type="text" placeholder="" formControlName="price" />
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>Giới thiệu:</label>
+                <textarea placeholder="" minlength="20" formControlName="description"></textarea>
+                <div *ngIf="editProductForm.controls['description'].hasError('required') 
+                        && editProductForm.controls['description'].touched" class="alert alert-danger slider-error">
+                    Lỗi: Lời giới thiệu không được để trống!
                 </div>
-                <div class="agile-field-txt">
-                    <label>
-                        <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>Số lượng:</label>
-                    <input type="text" placeholder="" formControlName="amount" />
+                <div *ngIf="editProductForm.controls['description'].hasError('minlength') 
+                        && editProductForm.controls['description'].touched" class="alert alert-danger slider-error">
+                    Lỗi: Lời giới thiệu quá ngắn, phải có ít nhất 20 kí tự!
                 </div>
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    <i class="fa fa-laptop" aria-hidden="true"></i>Đơn giá:</label>
+                <input type="text" minlength="4" placeholder="" formControlName="price"
+                    (keypress)="numberOnly($event)" />
+                <div *ngIf="editProductForm.controls['price'].hasError('required') 
+                                && editProductForm.controls['price'].touched" class="alert alert-danger slider-error">
+                    Lỗi: Giá sản phẩm không được để trống!
+                </div>
+                <div *ngIf="editProductForm.controls['price'].hasError('minlength') 
+                                && editProductForm.controls['price'].touched" class="alert alert-danger slider-error">
+                    Lỗi: Sản phẩm phải có giá ít nhất là 1.000!
+                </div>
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>Số lượng:</label>
+                <input type="text" placeholder="" formControlName="amount" (keypress)="numberOnly($event)" />
+                <div *ngIf="editProductForm.controls['amount'].hasError('required') 
+                                && editProductForm.controls['amount'].touched" class="alert alert-danger slider-error">
+                    Lỗi: Số lượng sản phẩm không được để trống!
+                </div>
+                <div *ngIf="editProductForm.controls['amount'].hasError('minlength') 
+                            && editProductForm.controls['amount'].touched" class="alert alert-danger slider-error">
+                    Lỗi: Sản phẩm phải có giá ít nhất là 1.000!
+                </div>
+            </div>
 
-                <div class="w3ls-contact  w3l-sub">
-                        <button type="submit" class="btn btn-danger">LƯU</button>
-                </div>
-            </form>
-        </div>
+            <div class="w3ls-contact  w3l-sub">
+                <button type="submit" [swal]="saveSwal" class="btn btn-danger" [disabled]="!editProductForm.valid">LƯU</button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -3,6 +3,7 @@ import { ProductService, product } from 'src/app/service/product.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-edit',
@@ -68,5 +69,13 @@ export class ProductEditComponent implements OnInit {
     this.productService.updateProduct(productData).subscribe(data => {
       this.staticRouter.navigate(['./product/list']);
     });
+  }
+
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
   }
 }

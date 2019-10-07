@@ -14,6 +14,16 @@
     <!-- content -->
     <ng-container *ngIf="products">
         <div class="lm-item lm-item-1" *ngFor="let product of products">
+                <swal
+                #deleteSwal
+                title="Xóa?"
+                text="Bạn muốn xóa sản phẩm này?"
+                type="question"
+                [showCancelButton]="true"
+                [focusCancel]="false"
+                (confirm)="deleteProduct(product.id)"
+                (cancel)="cancelProduct()">
+              </swal>
             <div class="lm-item-top">
                 <span class="lm-item-title lm-underline">{{product.name}}</span>
                 <div class="lm-item-price item-price2-w3ls">Giá: {{product.price}} VND
@@ -42,13 +52,13 @@
         <i class="fa fa-edit"></i>
 </button>
                 </a>
-                <button mat-raised-button class="btn btn-warning" (click)="deleteProduct(product.id)"
+                <button mat-raised-button  [swal]="deleteSwal" class="btn btn-warning"
         matTooltip="Xóa sản phẩm"
         aria-label="Button that displays a tooltip when focused or hovered over">
         <i
         class="fa fa-remove"></i>
 </button>
-                        <button mat-raised-button class="btn btn-primary"
+                        <button mat-raised-button class="btn btn-primary" (click)="addProductToCart(product.id)"
         matTooltip="Thêm vào giỏ hàng"
         aria-label="Button that displays a tooltip when focused or hovered over">
         <i class="fa fa-cart-plus"></i>
