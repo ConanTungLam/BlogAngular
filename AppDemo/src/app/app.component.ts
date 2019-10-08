@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartService } from './service/cart.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AppDemo';
+
+  constructor(
+    private cartService: CartService
+  ){}
+
+  title = 'App Demo';
   public full = false;
   fill() {
     this.full = !this.full;

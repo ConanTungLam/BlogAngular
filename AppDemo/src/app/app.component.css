@@ -128,3 +128,54 @@
         background-size: 300% 300%; */
         animation: gradientBG 15s ease infinite;
     }
+
+    .notice-item-bg{
+      display: flex;
+      position: absolute;
+      color: white;
+      width: 20px;
+      height: 20px;
+      top: -20%;
+      right: -8%;
+      background-color: white;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .notice-item{
+      display: flex;
+      position: absolute;
+      color: white;
+      width: 20px;
+      height: 20px;
+      top: -20%;
+      right: -8%;
+      background-color: blue;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      -webkit-animation-name: noti; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+      animation-name: noti;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes noti {
+      0%   {opacity: 0}
+      25%  {opacity: 0.5}
+      50%  {opacity: 1}
+      75%  {opacity: 0.5}
+      100% {opacity: 0}
+    }
+
+    /* Standard syntax */
+    @keyframes noti {
+      0%   {opacity: 0}
+      25%  {opacity: 0.5}
+      50%  {opacity: 1}
+      75%  {opacity: 0.5}
+      100% {opacity: 0}
+    }
+    

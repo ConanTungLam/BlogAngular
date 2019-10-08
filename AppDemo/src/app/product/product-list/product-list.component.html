@@ -1,4 +1,4 @@
-<div class="list-product-container">
+<div class="list-product-container">{{countNumberCart}}
     <div class="form-cover">
         <form class="form-inline my-2 my-lg-0 search">
             <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sản phẩm bạn muốn tìm..."
@@ -58,7 +58,7 @@
         <i
         class="fa fa-remove"></i>
 </button>
-                        <button mat-raised-button class="btn btn-primary" (click)="addProductToCart(product.id)"
+                        <button mat-raised-button class="btn btn-primary" (click)="addProductToCart(product)"
         matTooltip="Thêm vào giỏ hàng"
         aria-label="Button that displays a tooltip when focused or hovered over">
         <i class="fa fa-cart-plus"></i>

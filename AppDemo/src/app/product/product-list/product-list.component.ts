@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService, product } from 'src/app/service/product.service';
 import { SwalPortalTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
+import { CartService } from 'src/app/service/cart.service';
+
 
 @Component({
   selector: 'app-product-list',
@@ -11,10 +13,12 @@ import Swal from 'sweetalert2';
 export class ProductListComponent implements OnInit {
   products: product[];
   currentProduct: product = null;
-
+  countNumberCart: any
+  
   constructor(
     private productService: ProductService,
-    public readonly swalTargets: SwalPortalTargets
+    public readonly swalTargets: SwalPortalTargets,
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
@@ -55,8 +59,9 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  addProductToCart(id:number){
-    
+  addProductToCart(product){
+    this.cartService.addProductToCard(product);
+
     Swal.fire({
       title: 'Hoàn Tất!',
       text: 'Sản phẩm đã được thêm vào giỏ hàng!',

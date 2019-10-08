@@ -24,8 +24,13 @@
                         class="btn btn-outline-primary"><i class="fa fa-book"></i>Sản Phẩm</button></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['shoppingCart']" routerLinkActive="active"><span matBadge="4" matBadgeOverlap="true"><button
-                        class="btn btn-outline-primary"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</button></span></a>
+                <a class="nav-link" [routerLink]="['shoppingCart']" routerLinkActive="active"><button
+                        class="btn btn-outline-primary" style="position: relative">
+                        <i class="fa fa-shopping-cart"></i> Giỏ Hàng
+                        <span *ngIf="cartService.getNumberProductInCard() > 0" class="notice-item-bg"></span>
+                        <span *ngIf="cartService.getNumberProductInCard() > 0"
+                            class="notice-item">{{cartService.getNumberProductInCard()}}</span>
+                    </button></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['about']" routerLinkActive="active"><button

@@ -1,0 +1,12 @@
+.cart-list-container table {
+    width: 80%
+  }
+  
+  .cart-list-container th.mat-sort-header-sorted {
+    color: black;
+  }
+  .cart-list-container{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
