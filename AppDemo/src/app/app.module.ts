@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialCommonModule } from './material-common/material-common.module';
 import { CartListComponent } from './shopping-cart/cart-list/cart-list.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CartListComponent } from './shopping-cart/cart-list/cart-list.component
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialCommonModule
+    MaterialCommonModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
