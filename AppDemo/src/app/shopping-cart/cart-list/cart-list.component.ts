@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { product } from 'src/app/service/product.service';
+import { SwalPortalTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 // import { MatSort } from '@angular/material/sort';
 // import { MatTableDataSource } from '@angular/material/table';
-
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
@@ -21,7 +22,8 @@ export class CartListComponent implements OnInit {
 
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    public readonly swalTargets: SwalPortalTargets,
   ) { }
 
   ngOnInit() {
@@ -37,5 +39,35 @@ export class CartListComponent implements OnInit {
     })
   }
 
+  cancelResetCart(){
+    Swal.fire({
+      title: 'Thất Bại!',
+      text: 'Bạn đã hủy tác vụ đặt lại giỏ hàng!',
+      type: 'error',
+      timer: 2000
+    })
+  }
+
+  resetCart(){
+    this.listItem = [];
+    this.cartService.productList = [];
+    Swal.fire({
+      title: 'Hoàn Tất!',
+      text: 'Giỏ hàng đã được đặt lại!',
+      type: 'success',
+      timer: 2000
+    })
+  }
+
+  deleteCartItem(product){
+    this.cartService.removeProductToCard(product.id);
+    this.getShoppingCartItem()
+  }
+
+  heartEffect(){
+    $('.like-btn').on('click', function () {
+      $(this).toggleClass('is-active');
+    });
+  }
 
 }

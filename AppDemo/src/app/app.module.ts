@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialCommonModule } from './material-common/material-common.module';
 import { CartListComponent } from './shopping-cart/cart-list/cart-list.component';
 import { RouterModule } from '@angular/router';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     BrowserAnimationsModule,
     MaterialCommonModule,
-    RouterModule
+    RouterModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

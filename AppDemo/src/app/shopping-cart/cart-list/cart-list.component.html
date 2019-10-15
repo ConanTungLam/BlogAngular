@@ -1,19 +1,18 @@
 <div class="cart-list-container">
-  <h2><span class="badge badge-info" style="padding: 15px; border-radius: 20px; margin: 10px 0px 30px">GIỎ HÀNG CỦA BẠN</span></h2>
-  <div class="cart-content">
-    <ng-container *ngIf="listItem.length == 0">
-      <div class="cart-empty">
-        <div class="jumbotron">
-          <h1 class="display-4">Rỗng!</h1>
-          <p class="lead">Hiện tại, bạn chưa thêm sản phẩm nào vào giỏ hàng!</p>
-          <hr class="my-4">
-          <p>Nhấn trở lại trang sản phẩm để chọn thêm sản phẩm!</p>
-          <a class="btn btn-primary btn-lg" [routerLink]="['../product']" role="button">Đến trang sản phẩm...</a>
+    <div class="cart-content">
+      <ng-container *ngIf="listItem.length == 0">
+        <div class="cart-empty">
+          <div class="jumbotron">
+            <h1 class="display-4">Rỗng!</h1>
+            <p class="lead">Hiện tại, bạn chưa thêm sản phẩm nào vào giỏ hàng!</p>
+            <hr class="my-4">
+            <p>Nhấn trở lại trang sản phẩm để chọn thêm sản phẩm!</p>
+            <a class="btn btn-primary btn-lg" [routerLink]="['../product']" role="button">Đến trang sản phẩm...</a>
+          </div>
         </div>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="listItem.length > 0">
-      <!-- Material Angular sort header -->
+      </ng-container>
+      <ng-container *ngIf="listItem.length > 0">
+   <!-- Material Angular sort header -->
       <!-- <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8"> -->
         <!-- Position Column -->
         <!-- <ng-container matColumnDef="id"> -->
@@ -44,58 +43,93 @@
       <!-- </table> -->
       <!-- Material Angular sort header -->
 
-      <div class="container">
-          <!-- Mainbar-Starts-Here -->
-          <div class="main-bar">
-            <div class="product">
-              <h3>Sản Phẩm</h3>
-            </div>
-            <div class="quantity">
-              <h3>Số Lượng</h3>
-            </div>
-            <div class="price">
-              <h3>Thành Tiền</h3>
-            </div>
-            <div class="clear"></div>
-          </div>
-          <!-- //Mainbar-Ends-Here -->
-          <!-- Items-Starts-Here -->
-          <div class="items">
-            <div class="item1">
-              <div class="close1">
-                <!-- Remove-Item --><div class="alert-close"> </div><!-- //Remove-Item -->
-                <div class="image1">
-                  <img src="images/item1.png" width="100px" height="100px">
-                </div>
-                <div class="title1">
-                  <p>Gucci Gg1078/S 4Uavk Grey Wayfarer</p>
-                </div>
-                <div class="quantity1">
-                  <form>
-                    <input type="number" name="quantity" min="1" max="10" value="1">
-                  </form>
-                </div>
-                <div class="price1">
-                  <p>$ 210</p>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </div>
-          </div>
-          <!-- //Items-Ends-Here -->
-          <!-- Checkout-Starts-Here -->
-          <div class="checkout">
-            <div class="discount">
-              <span>Mã Giảm Giá:</span> <input type="text">
-            </div>
-            <div class="discount ds-right">
-                <span>Tổng Tiền:</span> VND
-              </div>
-            <div class="clear"></div>
-          </div>
-          <!-- //Checkout-Ends-Here -->
-</div>
 
-    </ng-container>
+      <div class="shopping-cart">
+    <div class="title">
+      <span>Giỏ Hàng Hiện Tại</span>
+    </div>
+    <div class="item" *ngFor="let product of listItem">
+      <div class="buttons">
+        <span class="delete-btn" (click)="deleteCartItem(product)"></span>
+        <span class="like-btn" (click)="heartEffect()"></span>
+      </div>
+
+      <div class="image">
+        <img src="/assets/products/logo.png" alt="" style="width: 100px; height: 100px; border: 1px solid; display: block" />
+      </div>
+
+      <div class="description">
+        <span>{{product.name}}</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn sign" type="button" name="button">
+          <img src="/assets/cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="name" value="1">
+        <button class="minus-btn sign" type="button" name="button">
+          <img src="/assets/cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">{{product.price}} <sup>VNĐ</sup></div>
+    </div>
+    <div class="total">
+      <span class="money-detail">Thành tiền: 1000000<sup>VNĐ</sup></span>
+      <div class="action-confirm">
+          <swal
+          #resetSwal
+          title="Đặt Lại?"
+          text="Bạn muốn đặt lại giỏ hàng, tất cả sản phẩm sẽ bị xóa?"
+          type="question"
+          [showCancelButton]="true"
+          [focusCancel]="false"
+          (confirm)="resetCart()"
+          (cancel)="cancelResetCart()">
+        </swal>
+          <button class="btn btn-outline-success active">Đặt Hàng</button>
+          <button class="btn btn-outline-danger" [swal]="resetSwal">Đặt Lại</button>
+        </div>
+    </div>
   </div>
-</div>
+
+
+
+  </ng-container>
+
+  <script type="text/javascript">
+    $('.minus-btn').on('click', function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.closest('div').find('input');
+      var value = parseInt($input.val());
+
+      if (value > 1) {
+        value = value - 1;
+      } else {
+        value = 0;
+      }
+
+      $input.val(value);
+
+    });
+
+    $('.plus-btn').on('click', function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.closest('div').find('input');
+      var value = parseInt($input.val());
+
+      if (value < 100) {
+        value = value + 1;
+      } else {
+        value = 100;
+      }
+
+      $input.val(value);
+    });
+
+    $('.like-btn').on('click', function () {
+      $(this).toggleClass('is-active');
+    });
+  </script>

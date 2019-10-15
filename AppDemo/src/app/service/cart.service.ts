@@ -16,10 +16,11 @@ export class CartService {
     return of (this.productList);
   }
 
-  // removeProductToCard (product){
-  //   this.productList.remove(product);
+  removeProductToCard (id){
+    const index = this.productList.findIndex(data => data.id === id);
+    this.productList.splice(index, 1);
     
-  // }
+  }
 
   addProductToCard (product: any){
     this.productList.push(product);
