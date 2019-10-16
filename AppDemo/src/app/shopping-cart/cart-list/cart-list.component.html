@@ -63,11 +63,11 @@
       </div>
 
       <div class="quantity">
-        <button class="plus-btn sign" type="button" name="button">
+        <button class="plus-btn sign" type="button" name="button" (click)="plusItem(product)">
           <img src="/assets/cart/plus.svg" alt="" />
         </button>
-        <input type="text" name="name" value="1">
-        <button class="minus-btn sign" type="button" name="button">
+        <input type="text" name="name" value="{{product.count}}">
+        <button class="minus-btn sign" type="button" name="button" (click)="minusItem(product)">
           <img src="/assets/cart/minus.svg" alt="" />
         </button>
       </div>
@@ -75,7 +75,7 @@
       <div class="total-price">{{product.price}} <sup>VNĐ</sup></div>
     </div>
     <div class="total">
-      <span class="money-detail">Thành tiền: 1000000<sup>VNĐ</sup></span>
+      <span class="money-detail">Thành tiền: {{totalPrice}}<sup>VNĐ</sup></span>
       <div class="action-confirm">
           <swal
           #resetSwal
