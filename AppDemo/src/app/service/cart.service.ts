@@ -5,80 +5,69 @@ import { product, ProductService } from './product.service';
 import { SwalPortalTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
 
+export interface cartItem {
+  product: product;
+  count: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  productList = [];
-  private arrayIdItem = [];
-  cartItem = {
-    id: null,
-    name: '',
-    price: null,
-    amount: null,
-    count: 0,
-
-  }
-
-  constructor() { }
+  productItems: cartItem[] = [];
+  listProducts: product[];
+  constructor(
+    private productService: ProductService
+  ) { }
 
 
   getListProductInCard() {
-    return of(this.productList);
+    return of(this.productItems);
   }
 
-  removeProductToCard(id) {
-    const index = this.productList.findIndex(data => data.id === id);
-    this.productList.splice(index, 1);
-
+  removeProductToCard(id: number) {
+    let productIndex = this.getProductIndex(id);
+    this.productItems.splice(productIndex, 1);
   }
 
   addProductToCard(product: any) {
-    this.cartItem = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      amount: product.amount,
-      count: 1
-    }
+    let productIndex = this.getProductIndex(product.id);
 
-    if (this.arrayIdItem.filter(x => x == product.id).length > 0) {
-      for (var i = 0; i < this.productList.length; i++) {
-        if (product.id == this.productList[i].id) {
-          console.log([this.productList[i].count,this.productList[i].amount])
-          if (this.productList[i].count >= this.productList[i].amount) {
-            //do some thing
-          }
-          else {
-            this.productList[i].count += 1;
-            break;
-          }
-
-        }
+    if (productIndex > -1) {
+      if (this.productItems[productIndex].count >= this.productItems[productIndex].product.amount) {
+        
+        alert('Kho hàng đã hết! Chức năng đang hoàn thiện!')
+        
       }
-    }
-    else {
-      this.arrayIdItem.push(product.id);
-      this.productList.push(this.cartItem);
+      else {
+        this.productItems[productIndex].count += 1;
+       
+      }
+
+    } else {
+      this.productItems.push({
+        product: product,
+        count: 1
+      });
     }
   }
 
-  getMoneyForCart() {
-    var total = 0;
-    for (var k = 0; k < this.productList.length; k++) {
-      total = total + this.productList[k].count * this.productList[k].price
-    }
-    return total
+  deleteOverItem(){
+    
   }
 
-  getMoneyForItem(product) {
-    return product.price * product.count;
+  getProductIndex(productId: number) {
+    return this.productItems.findIndex(x => x.product.id == productId);
   }
 
   getNumberProductInCard() {
-    return this.productList.length;
+    return this.productItems.length;
   }
+
+  clearCart() {
+    this.productItems = [];
+  }
+
 
 
 }

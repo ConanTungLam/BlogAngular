@@ -1,26 +1,26 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CartService } from 'src/app/service/cart.service';
+import { CartService, cartItem } from 'src/app/service/cart.service';
 import { product } from 'src/app/service/product.service';
 import { SwalPortalTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
 import * as $ from 'jquery';
 // import { MatSort } from '@angular/material/sort';
 // import { MatTableDataSource } from '@angular/material/table';
+
+
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  listItem: product[];
+  productItems: cartItem[];
   // dataSource = new MatTableDataSource();
   // displayedColumns: string[] = ['id', 'name', 'price', 'amount', 'action'];
   
   // @ViewChild(MatSort, {static: false}) set content(sort: MatSort) {
   //   this.dataSource.sort = sort;
   // }
-
-
 
   constructor(
     private cartService: CartService,
@@ -29,15 +29,17 @@ export class CartListComponent implements OnInit {
 
   ngOnInit() {
     this. getShoppingCartItem() 
+
   }
 
 
   getShoppingCartItem(){
+
     this.cartService.getListProductInCard().subscribe(data => {
-      this.listItem = data;
-      // this.dataSource = new MatTableDataSource(this.listItem);
-      // this.dataSource.sort = this.sort;
+      this.productItems = data;
     })
+
+    console.log(this.cartService.productItems);
   }
 
   cancelResetCart(){
@@ -50,8 +52,8 @@ export class CartListComponent implements OnInit {
   }
 
   resetCart(){
-    this.listItem = [];
-    this.cartService.productList = [];
+    this.productItems = [];
+    this.cartService.clearCart();
     Swal.fire({
       title: 'Hoàn Tất!',
       text: 'Giỏ hàng đã được đặt lại!',
@@ -61,8 +63,10 @@ export class CartListComponent implements OnInit {
   }
 
   deleteCartItem(product){
+
     this.cartService.removeProductToCard(product.id);
     this.getShoppingCartItem()
+
   }
 
   heartEffect(){
@@ -71,8 +75,8 @@ export class CartListComponent implements OnInit {
     });
   }
 
-  plusItem(product){
-    if(product.count >= product.amount){
+  plusItem(productItem){
+    if(productItem.count >= productItem.product.amount){
       Swal.fire({
         title: 'Lỗi',
         text: 'Kho hàng không đủ số lượng!',
@@ -81,13 +85,25 @@ export class CartListComponent implements OnInit {
       })
     }
     else{
-      product.count = product.count + 1;
+      productItem.count = productItem.count + 1;
+      Swal.fire({
+        title: 'Tăng!',
+        text: 'Bạn vừa tăng 1 sản phẩm!',
+        type: 'success',
+        timer: 500
+      })
     }
   }
 
-  minusItem(product){
-    if(product.count > 1){
-      product.count = product.count - 1;
+  minusItem(productItem){
+    if(productItem.count > 1){
+      productItem.count = productItem.count - 1;
+      Swal.fire({
+        title: 'Giảm!',
+        text: 'Bạn vừa giảm 1 sản phẩm!',
+        type: 'success',
+        timer: 500
+      })
     }
     else{
       Swal.fire({
@@ -100,8 +116,12 @@ export class CartListComponent implements OnInit {
 
   }
 
-  public totalPrice = this.cartService.getMoneyForCart();
-
-
+  getTotalPrice(){
+    let total = 0;
+    for(var i = 0; i < this.productItems.length; i++){
+      total = total + this.productItems[i].count*this.productItems[i].product.price
+    }
+    return total;
+  }
 
 }

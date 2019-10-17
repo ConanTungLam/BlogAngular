@@ -184,9 +184,7 @@
     border: none;
     cursor: pointer;
   }
-  .cart-list-container .minus-btn img {
-    margin-bottom: 3px;
-  }
+  
   .cart-list-container .plus-btn img {
     margin-top: 2px;
   }
