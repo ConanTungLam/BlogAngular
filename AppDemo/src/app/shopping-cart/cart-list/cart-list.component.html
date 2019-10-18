@@ -1,6 +1,7 @@
 <div class="cart-list-container">
   <div class="cart-content">
     <ng-container *ngIf="productItems.length == 0">
+
       <div class="cart-empty">
         <div class="jumbotron">
           <h1 class="display-4">Rỗng!</h1>
@@ -43,52 +44,75 @@
       <!-- </table> -->
       <!-- Material Angular sort header -->
 
+      
+      <mat-horizontal-stepper labelPosition="bottom">
+          <mat-step label="Kiểm tra & Đặt hàng" state="phone" editable="false">
+              <div class="shopping-cart">
+                  <div class="title">
+                    <span>Giỏ Hàng Hiện Tại</span>
+                  </div>
+          
+                  <div class="item" *ngFor="let productItem of productItems">
+                    <div class="buttons">
+                      <span class="delete-btn" (click)="deleteCartItem(productItem.product)"></span>
+                      <span class="like-btn" (click)="heartEffect()"></span>
+                    </div>
+          
+                    <div class="image">
+                      <img src="/assets/products/logo.png" alt=""
+                        style="width: 100px; height: 100px; border: 1px solid; display: block" />
+                    </div>
+          
+                    <div class="description">
+                      <span>{{productItem.product.name}}</span>
+                    </div>
+          
+                    <div class="quantity">
+                      <button class="minus-btn sign" type="button" name="button" (click)="minusItem(productItem)">
+                        <img src="/assets/cart/minus.svg" alt="" />
+                      </button>
+                      <input type="text" name="name" value="{{productItem.count}}" [(ngModel)]="productItem.count">
+                      <button class="plus-btn sign" type="button" name="button" (click)="plusItem(productItem)">
+                        <img src="/assets/cart/plus.svg" alt="" />
+                      </button>
+                    </div>
+          
+                    <div class="total-price" style="white-space: nowrap">{{productItem.count * productItem.product.price}}
+                      <sup>VNĐ</sup></div>
+                  </div>
+                  <div class="total">
+                    <span class="money-detail">Thành tiền: {{getTotalPrice()}}<sup>VNĐ</sup></span>
+                    <div class="action-confirm">
+                      <swal #resetSwal title="Đặt Lại?" text="Bạn muốn đặt lại giỏ hàng, tất cả sản phẩm sẽ bị xóa?"
+                        type="question" [showCancelButton]="true" [focusCancel]="false" (confirm)="resetCart()"
+                        (cancel)="cancelResetCart()">
+                      </swal>
+                      <button class="btn btn-outline-success active">Đặt Hàng</button>
+                      <button class="btn btn-outline-danger" [swal]="resetSwal">Đặt Lại</button>
+                    </div>
+                  </div>
+                </div>
+            <div style="display: block; text-align: right">
+              <button mat-button matStepperNext>Kế tiếp</button>
+            </div>
+          </mat-step>
+          <mat-step label="Đợi xác nhận đơn hàng" state="chat" editable="false">
+              Đang đợi của hàng xác nhận đơn hàng!
+            <div style="display: block">
+              <table width="100%">
+                <tr>
+                  <td style="width: 50%; text-align: left"><button mat-button matStepperPrevious disabled>Quay lại</button></td>
+                  <td style="width: 50%; text-align: right"><button mat-button matStepperNext>Kế tiếp</button></td>
+                </tr>
+              </table>
+            </div>
+          </mat-step>
+          <mat-step label="Hoàn thành đơn hàng" state="home" editable="false">
+            Đơn hàng đã hoàn tất! Cảm ơn bạn đã đặt hàng!
+          </mat-step>
+              </mat-horizontal-stepper>
 
-      <div class="shopping-cart">
-        <div class="title">
-          <span>Giỏ Hàng Hiện Tại</span>
-        </div>
-
-        <div class="item" *ngFor="let productItem of productItems">
-          <div class="buttons">
-            <span class="delete-btn" (click)="deleteCartItem(productItem.product)"></span>
-            <span class="like-btn" (click)="heartEffect()"></span>
-          </div>
-
-          <div class="image">
-            <img src="/assets/products/logo.png" alt=""
-              style="width: 100px; height: 100px; border: 1px solid; display: block" />
-          </div>
-
-          <div class="description">
-            <span>{{productItem.product.name}}</span>
-          </div>
-
-          <div class="quantity">
-            <button class="minus-btn sign" type="button" name="button" (click)="minusItem(productItem)">
-              <img src="/assets/cart/minus.svg" alt="" />
-            </button>
-            <input type="text" name="name" value="{{productItem.count}}">
-            <button class="plus-btn sign" type="button" name="button" (click)="plusItem(productItem)">
-              <img src="/assets/cart/plus.svg" alt="" />
-            </button>
-          </div>
-
-          <div class="total-price" style="white-space: nowrap">{{productItem.count * productItem.product.price}}
-            <sup>VNĐ</sup></div>
-        </div>
-        <div class="total">
-          <span class="money-detail">Thành tiền: {{getTotalPrice()}}<sup>VNĐ</sup></span>
-          <div class="action-confirm">
-            <swal #resetSwal title="Đặt Lại?" text="Bạn muốn đặt lại giỏ hàng, tất cả sản phẩm sẽ bị xóa?"
-              type="question" [showCancelButton]="true" [focusCancel]="false" (confirm)="resetCart()"
-              (cancel)="cancelResetCart()">
-            </swal>
-            <button class="btn btn-outline-success active">Đặt Hàng</button>
-            <button class="btn btn-outline-danger" [swal]="resetSwal">Đặt Lại</button>
-          </div>
-        </div>
-      </div>
+      
     </ng-container>
   </div>
 </div>

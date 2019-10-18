@@ -4,6 +4,8 @@ import { product } from 'src/app/service/product.service';
 import { SwalPortalTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
 import * as $ from 'jquery';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 // import { MatSort } from '@angular/material/sort';
 // import { MatTableDataSource } from '@angular/material/table';
 
@@ -11,7 +13,10 @@ import * as $ from 'jquery';
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.css']
+  styleUrls: ['./cart-list.component.css'],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+  }]
 })
 export class CartListComponent implements OnInit {
   productItems: cartItem[];
@@ -25,11 +30,11 @@ export class CartListComponent implements OnInit {
   constructor(
     private cartService: CartService,
     public readonly swalTargets: SwalPortalTargets,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
-    this. getShoppingCartItem() 
-
+    this. getShoppingCartItem()
   }
 
 
