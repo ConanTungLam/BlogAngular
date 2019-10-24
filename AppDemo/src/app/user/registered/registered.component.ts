@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UserRegisteredService, User } from 'src/app/service/user-registered.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registered',
@@ -8,11 +12,38 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class RegisteredComponent implements OnInit {
 
+  listUser: User[];
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private userRegisteredService: UserRegisteredService,
+    private router: Router
+
   ) { }
 
   ngOnInit() {
+    this.getListUser();
+
+  }
+
+  getListUser(){
+    this.userRegisteredService.getListUserDefault().subscribe(data => {
+      this.listUser = data;
+    })
+  }
+  
+  saveLoginForm(data: any){
+    this.userRegisteredService.addNewUser(data.value);
+    this.getListUser();
+    console.log(this.listUser)
+    this.registeredForm.reset();
+    Swal.fire({
+      title: 'Thành Công!',
+      text: 'Tài khoản đã được tạo. Đang chuyển sang trang đăng nhập!',
+      type: 'success',
+      timer: 2000
+    });
+    this.router.navigate(['./login']);
+
   }
 
   registeredForm = this.fb.group({
@@ -29,9 +60,9 @@ export class RegisteredComponent implements OnInit {
 
   checkPasswords(group: FormGroup) { 
     let pass = group.get('password').value;
-    let confirmPass = group.get('repassword').value;
+    let confirmPass = group.get('repassword').value;  
+    return pass === confirmPass ? null : { notSame: true } ;
 
-    return pass === confirmPass ? null : { notSame: true }     
 }
 
   numberOnly(event): boolean {
@@ -42,8 +73,5 @@ export class RegisteredComponent implements OnInit {
     return true;
   }
 
-  saveLoginForm(data: any){
-    console.log(data.value)
-  }
 
 }

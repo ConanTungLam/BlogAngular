@@ -55,7 +55,7 @@
                         && registeredForm.controls['repassword'].touched" class="alert alert-danger slider-error">
                             Vui lòng nhập lại mật khẩu!
                         </div>
-                        <div *ngIf="registeredForm.controls['repassword'].hasError('checkPasswords') 
+                        <div *ngIf="registeredForm.hasError('notSame') 
                         && registeredForm.controls['repassword'].touched" class="alert alert-danger slider-error">
                             Mật khẩu không khớp!!
                         </div>
