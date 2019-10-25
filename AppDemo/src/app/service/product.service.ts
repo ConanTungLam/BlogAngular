@@ -12,21 +12,21 @@ export interface product {
 const products: product[] = [
   {
     id: 1,
-    name: 'Iphone Z',
+    name: 'kIphone Z',
     description: 'This is description for phone.',
     price: 1000000,
     amount: 3
   },
   {
     id: 2,
-    name: 'Iphone A',
+    name: 'zIphone A',
     description: 'This is description for phone.',
     price: 2000000,
     amount: 7
   },
   {
     id: 3,
-    name: 'Iphone B',
+    name: 'xIphone B',
     description: 'This is description for phone.',
     price: 3000000,
     amount: 9
@@ -77,7 +77,76 @@ const products: product[] = [
     id: 10,
     name: 'Iphone I',
     description: 'This is description for phone.',
-    price: 10000000,
+    price: 1200000,
+    amount: 11
+  },{
+    id: 11,
+    name: 'Iphone ZX',
+    description: 'This is description for phone.',
+    price: 1000000,
+    amount: 3
+  },
+  {
+    id: 12,
+    name: 'Iphone AX',
+    description: 'This is description for phone.',
+    price: 2000000,
+    amount: 7
+  },
+  {
+    id: 13,
+    name: 'Iphone BX',
+    description: 'This is description for phone.',
+    price: 3000000,
+    amount: 9
+  },
+  {
+    id: 14,
+    name: 'Iphone CX',
+    description: 'This is description for phone.',
+    price: 4000000,
+    amount: 10
+  },
+  {
+    id: 15,
+    name: 'Iphone DX',
+    description: 'This is description for phone.',
+    price: 5000000,
+    amount: 5
+  },
+  {
+    id: 16,
+    name: 'Iphone EX',
+    description: 'This is description for phone.',
+    price: 6000000,
+    amount: 12
+  },
+  {
+    id: 17,
+    name: 'Iphone FX',
+    description: 'This is description for phone.',
+    price: 7000000,
+    amount: 1
+  },
+  {
+    id: 18,
+    name: 'Iphone GX',
+    description: 'This is description for phone.',
+    price: 8000000,
+    amount: 20
+  },
+  {
+    id: 19,
+    name: 'Iphone HX',
+    description: 'This is description for phone.',
+    price: 9000000,
+    amount: 4
+  },
+  {
+    id: 20,
+    name: 'Iphone IX',
+    description: 'This is description for phone.',
+    price: 1200000,
     amount: 11
   }
 ]

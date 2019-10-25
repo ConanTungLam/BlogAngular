@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { CartService } from 'src/app/service/cart.service';
 
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -14,7 +15,12 @@ export class ProductListComponent implements OnInit {
   products: product[];
   currentProduct: product = null;
   countNumberCart: any
-  
+  items: any =
+    [
+      { name: "archie", e: 'hell', o: 1 },
+      { name: "jake", e: 'hell', o: 1 },
+      { name: "richard", e: 'hell', o: 1 }
+    ];
   constructor(
     private productService: ProductService,
     public readonly swalTargets: SwalPortalTargets,
@@ -26,21 +32,21 @@ export class ProductListComponent implements OnInit {
     console.log(this.getListProducts())
   }
 
-  getListProducts(){
-    this.productService.getProducts().subscribe(data =>{
+  getListProducts() {
+    this.productService.getProducts().subscribe(data => {
       this.products = data;
     })
   }
- 
-  viewProduct(product:product){
+
+  viewProduct(product: product) {
     this.currentProduct = product;
   }
 
-  addIssue(){
+  addIssue() {
     alert('Chức năng đang hoàn thiện!')
   }
 
-  deleteProduct(id:number){
+  deleteProduct(id: number) {
     this.productService.deleteProduct(id);
     this.getListProducts();
     Swal.fire({
@@ -51,7 +57,7 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  cancelProduct(){
+  cancelProduct() {
     Swal.fire({
       title: 'Thất Bại!',
       text: 'Bạn đã hủy tác vụ xóa!',
@@ -60,7 +66,7 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  addProductToCart(product){
+  addProductToCart(product) {
     this.cartService.addProductToCard(product);
 
     Swal.fire({
@@ -71,5 +77,5 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  
+
 }

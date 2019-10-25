@@ -1,13 +1,14 @@
 <div class="product-add-container">
-        <swal
+        <!-- <swal
         #saveSwal
         title="Thành Công!"
         text="Sản phẩm đã được lưu!"
         type="success"
+        timer="2000"
         [showCancelButton]="false"
         [focusCancel]="false"
         (confirm)="addNewProduct()">
-      </swal>
+      </swal> -->
 
     <h1 class="badge badge-info" style="padding: 15px; border-radius: 20px;">THÊM SẢN PHẨM</h1>
     <div class="w3ls-contact">
@@ -61,7 +62,7 @@
             </div>
             </div>
             <div class="w3ls-contact  w3l-sub">
-                <button class="btn btn-danger"  [swal]="saveSwal" [disabled]="!addProductForm.valid">LƯU</button>
+                <button class="btn btn-danger" [disabled]="!addProductForm.valid">LƯU</button>
             </div>
         </form>
     </div>

@@ -10,6 +10,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialCommonModule } from '../material-common/material-common.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
+//install npm install ngx-pagination --save
+import { NgxPaginationModule } from 'ngx-pagination';
+// search -- npm i ng2-search-filter --save
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     ProductListComponent, 
@@ -23,6 +28,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     ReactiveFormsModule,
     FormsModule,
     MaterialCommonModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
     SweetAlert2Module.forRoot()
     ],
  

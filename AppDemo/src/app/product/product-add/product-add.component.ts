@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/service/product.service';
 import { Location } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-add',
@@ -32,6 +33,12 @@ export class ProductAddComponent implements OnInit {
       this.productService.getProducts();
       this.addProductForm.reset();
       this.location.back();
+      Swal.fire({
+        title: 'Thành Công!',
+        text: 'Sản phẩm đã được lưu!',
+        type: 'success',
+        timer: 2000
+      })
     
   }
 
