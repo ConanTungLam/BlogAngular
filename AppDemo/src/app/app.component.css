@@ -179,3 +179,140 @@
       100% {opacity: 0}
     }
     
+    /* footer */
+footer {
+  background: #17181b;
+}
+
+h3.footer-title,
+h2.footer-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.foot-icon-w3 span {
+  color: #fff;
+  font-size: 20px;
+}
+
+/* newsletter */
+.subscribe_form input[type="email"] {
+  width: 70%;
+  float: left;
+  padding: 13px;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+  background: #fff;
+  border: none;
+  letter-spacing: 1px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+
+.subscribe_form button {
+  font-size: 15px;
+  outline: none;
+  letter-spacing: 1px;
+  padding: 13px 20px;
+  border: none;
+  color: #fff;
+  background: #6174fc;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+
+/* //newsletter */
+
+/* social icons */
+.w3pvt-webits_social_list li {
+  display: inline-block;
+}
+
+.w3pvt-webits_social_list li {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.w3pvt-webits_social_list li a span {
+  color: #fff;
+  line-height: 36px;
+}
+
+.w3_w3pvt-web_facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.w3pvt-web_twitter {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.w3_w3pvt-web_dribble {
+  background: #ea4c89;
+  border-color: #ea4c89;
+}
+
+.w3_w3pvt-web_google {
+  background: #F44336;
+  border-color: #F44336;
+}
+
+/* //social-icons */
+footer{
+  position: relative;
+  z-index: 99999;
+}
+/* contact address */
+.contact-info h4 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.footer-text p,
+.contact-info p a,
+.contact-info p,
+.footer-grid_section_1its p {
+  color: #727377;
+  font-size: 15px;
+}
+
+.footer-title h3 {
+  font-size: 24px;
+  color: #f3f3f3;
+  letter-spacing: 1px;
+}
+
+/* //contact address */
+/* //footer */
+
+/* copyright */
+.cpy-right {
+  background: #1c1d21;
+}
+
+.cpy-right p {
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.cpy-right p a {
+  color: #eee;
+}
+
+.cpy-right p a:hover {
+  color: #ff6b6b;
+}
+
+/* //copyright */
