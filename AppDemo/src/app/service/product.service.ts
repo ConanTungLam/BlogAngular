@@ -12,139 +12,139 @@ export interface product {
 const products: product[] = [
   {
     id: 1,
-    name: 'kIphone Z',
+    name: 'Samsung S8',
     description: 'This is description for phone.',
     price: 1000000,
     amount: 3
   },
   {
     id: 2,
-    name: 'zIphone A',
+    name: 'Samsung S9',
     description: 'This is description for phone.',
     price: 2000000,
     amount: 7
   },
   {
     id: 3,
-    name: 'xIphone B',
+    name: 'Iphone 8+',
     description: 'This is description for phone.',
     price: 3000000,
     amount: 9
   },
   {
     id: 4,
-    name: 'Iphone C',
+    name: 'Iphone X',
     description: 'This is description for phone.',
     price: 4000000,
     amount: 10
   },
   {
     id: 5,
-    name: 'Iphone D',
+    name: 'Iphone 11',
     description: 'This is description for phone.',
     price: 5000000,
     amount: 5
   },
   {
     id: 6,
-    name: 'Iphone E',
+    name: 'Samsung Note 8',
     description: 'This is description for phone.',
     price: 6000000,
     amount: 12
   },
   {
     id: 7,
-    name: 'Iphone F',
+    name: 'Nokia 6',
     description: 'This is description for phone.',
     price: 7000000,
     amount: 1
   },
   {
     id: 8,
-    name: 'Iphone G',
+    name: 'Nokia 8',
     description: 'This is description for phone.',
     price: 8000000,
     amount: 20
   },
   {
     id: 9,
-    name: 'Iphone H',
+    name: 'Iphone 6s',
     description: 'This is description for phone.',
     price: 9000000,
     amount: 4
   },
   {
     id: 10,
-    name: 'Iphone I',
+    name: 'Samsung S10+',
     description: 'This is description for phone.',
     price: 1200000,
     amount: 11
   },{
     id: 11,
-    name: 'Iphone ZX',
+    name: 'Samsung A8',
     description: 'This is description for phone.',
     price: 1000000,
     amount: 3
   },
   {
     id: 12,
-    name: 'Iphone AX',
+    name: 'Iphone 7+',
     description: 'This is description for phone.',
     price: 2000000,
     amount: 7
   },
   {
     id: 13,
-    name: 'Iphone BX',
+    name: 'Xiaomi Mi 8',
     description: 'This is description for phone.',
     price: 3000000,
     amount: 9
   },
   {
     id: 14,
-    name: 'Iphone CX',
+    name: 'Sony XA',
     description: 'This is description for phone.',
     price: 4000000,
     amount: 10
   },
   {
     id: 15,
-    name: 'Iphone DX',
+    name: 'Sony U6',
     description: 'This is description for phone.',
     price: 5000000,
     amount: 5
   },
   {
     id: 16,
-    name: 'Iphone EX',
+    name: 'Lg G7',
     description: 'This is description for phone.',
     price: 6000000,
     amount: 12
   },
   {
     id: 17,
-    name: 'Iphone FX',
+    name: 'Lg L30',
     description: 'This is description for phone.',
     price: 7000000,
     amount: 1
   },
   {
     id: 18,
-    name: 'Iphone GX',
+    name: 'Iphone X+',
     description: 'This is description for phone.',
     price: 8000000,
     amount: 20
   },
   {
     id: 19,
-    name: 'Iphone HX',
+    name: 'Samsung Note 10',
     description: 'This is description for phone.',
     price: 9000000,
     amount: 4
   },
   {
     id: 20,
-    name: 'Iphone IX',
+    name: 'Ipad Air 2',
     description: 'This is description for phone.',
     price: 1200000,
     amount: 11

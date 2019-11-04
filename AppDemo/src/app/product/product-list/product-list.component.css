@@ -38,8 +38,9 @@ span.info-item{
     margin-bottom: 20px!important
 }
 
-.form-cover form input{
-    min-width: 350px;
+.list-product-container input{
+   width: 50%;
+   display: inline-block;
 }
 
 .modal-sub-footer {

@@ -8,7 +8,7 @@
     <!-- content -->
     <ng-container *ngIf="products">
             <input [(ngModel)]="term" class="search-input form-control mr-sm-2" type="search" placeholder="Nhập tên sản phẩm bạn muốn tìm..."
-                aria-label="Search">
+                aria-label="Search"><br>
         <div class="lm-item lm-item-1" *ngFor="let product of products | filter:term | paginate: { itemsPerPage: 10, currentPage: p }">
                 <swal
                 #deleteSwal
