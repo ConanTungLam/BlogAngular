@@ -24,7 +24,7 @@
     "@sweetalert2/ngx-sweetalert2": "^6.0.1",
     "angular-sweetalert-service": "^2.0.2",
     "hammerjs": "^2.0.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-search-filter": "^0.5.1",
     "ngx-pagination": "^4.1.0",
     "rxjs": "~6.4.0",
